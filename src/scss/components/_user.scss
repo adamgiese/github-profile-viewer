@@ -1,0 +1,18 @@
+.user {
+  &-details {
+    background: $white;
+    max-width: calc(200px + 4rem);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  &-name {
+    font-size: 1.4rem;
+  }
+
+  &-bio {
+    border-top: 2px solid currentColor;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+}

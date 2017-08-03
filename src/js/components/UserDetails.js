@@ -11,8 +11,8 @@ const UserDetails = (props) => {
         <img src={props.image_src} />
         <p className='user-name'>{props.display_name}</p>
         <p className='user-location'>{props.location}</p>
-        {bio}
         {company}
+        {bio}
       </div>
     );
   }

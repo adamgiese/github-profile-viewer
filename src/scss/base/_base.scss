@@ -10,4 +10,5 @@ body {
   @include async-font($sans-serif, $sans-serif-fallback);
   min-height: 100vh;
   position: relative;
+  background: $grey;
 }
