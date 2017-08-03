@@ -15,11 +15,25 @@ export function requestUserProfile(user) {
   };
 }
 
+export function requestUserRepos(user) {
+  return {
+    type: 'REQUEST_USER_REPOS',
+  };
+}
+
 export function receiveUser(user, userDetails) {
   return {
     type: 'RECEIVE_USER',
     user,
     userDetails,
+    receivedAt: Date.now(),
+  };
+}
+
+export function receiveRepos(user, repos) {
+  return {
+    type: 'RECEIVE_REPOS',
+    repos,
     receivedAt: Date.now(),
   };
 }
@@ -38,6 +52,22 @@ export function fetchUserDetails(user) {
       )
       .then(
         response => dispatch(receiveUser(user, response))
+      );
+  };
+}
+
+export function fetchUserRepos(user) {
+  return (dispatch) => {
+    dispatch(requestUserRepos(user));
+    return fetch(`https://api.github.com/users/${user}/repos`)
+      .then(
+        res => res.json(),
+        /* eslint-disable no-console */
+        err => console.log('There was an error:', err)
+        /* eslint-enable no-console */
+      )
+      .then(
+        response => dispatch(receiveRepos(user, response))
       );
   };
 }

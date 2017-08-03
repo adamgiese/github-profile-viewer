@@ -3,12 +3,11 @@ const handleActions = (state = [], action) => {
     case 'SELECT_USER':
       return { ...state, user: action.user };
     case 'REQUEST_USER_PROFILE':
-      return { ...state, isFetching: true };
+      return { ...state, isFetchingUser: true };
     case 'RECEIVE_USER':
-      console.log(action.userDetails.name);
       return {
         ...state,
-        isFetching: false,
+        isFetchingUser: false,
         userDetails: {
           display_name: action.userDetails.name,
           company: action.userDetails.company,
@@ -16,6 +15,15 @@ const handleActions = (state = [], action) => {
           location: action.userDetails.location,
           image_src: action.userDetails.avatar_url,
         },
+        lastUpdated: action.receivedAt,
+      };
+    case 'REQUEST_USER_REPOS':
+      return { ...state, isFetchingRepos: true };
+    case 'RECEIVE_REPOS':
+      return {
+        ...state,
+        isFetchingRepos: false,
+        repos: action.repos,
         lastUpdated: action.receivedAt,
       };
     default:

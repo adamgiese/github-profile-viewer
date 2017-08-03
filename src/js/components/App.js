@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import UserProfile from './UserProfile';
-import { selectUser, fetchUserDetails } from '../actions';
+import { selectUser, fetchUserDetails, fetchUserRepos } from '../actions';
 import store from '../store';
 
 /* eslint-ensable no-unused-vars */
@@ -11,6 +11,7 @@ const App = (props) => {
   const onUserProfileEnter = (user) => {
     store.dispatch(selectUser(user));
     store.dispatch(fetchUserDetails(user));
+    store.dispatch(fetchUserRepos(user));
   };
   return (
     <div className='app'>
