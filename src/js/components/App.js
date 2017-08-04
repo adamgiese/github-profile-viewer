@@ -2,6 +2,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import UserProfile from './UserProfile';
+import Repo from './Repo';
 import { selectUser, fetchUserDetails, fetchUserRepos } from '../actions';
 import store from '../store';
 
@@ -18,6 +19,7 @@ const App = (props) => {
       <h1>Github Profile Viewer</h1>
       <Link to="/about">About</Link>
       <Route exact path="/" component={UserProfile} onEnter={onUserProfileEnter('adamgiese')}/>
+      <Route exact path="/:repo/commits" component={Repo} onEnter={onUserProfileEnter('adamgiese')}/>
     </div>
   );
 };
