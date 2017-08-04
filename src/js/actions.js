@@ -59,7 +59,7 @@ export function fetchUserDetails(user) {
 export function fetchUserRepos(user) {
   return (dispatch) => {
     dispatch(requestUserRepos(user));
-    return fetch(`https://api.github.com/users/${user}/repos`)
+    return fetch(`https://api.github.com/users/${user}/repos?sort=updated`)
       .then(
         res => res.json(),
         /* eslint-disable no-console */

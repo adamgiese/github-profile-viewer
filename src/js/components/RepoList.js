@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { Link } from 'react-router-dom';
 /* eslint-ensable no-unused-vars */
 
 const UserDetails = (props) => {
@@ -10,13 +11,14 @@ const UserDetails = (props) => {
           className='repo'
           key={repo.id}
         >
-          <h2>{repo.name}<small>{repo.language}</small></h2>
+          <h2><Link to={`${repo.name}/commits`}>{repo.name}</Link></h2>
+          <p>{repo.language}</p>
           <div className='counts'>
             <span className='count--watchers'>{repo.watchers_count} watchers</span>
             <span className='count--forks'>{repo.forks_count} forks</span>
           </div>
-          <hr />
-          <p>{repo.description}</p>
+          { repo.description ? <hr /> : '' }
+          { repo.description ? <p className='repo-description'>{repo.description}</p> : '' }
           <hr />
           { repo.homepage ? <a href={repo.homepage}>View Project</a> : '' }
           <a href={repo.svn_url}>Git Home</a>
