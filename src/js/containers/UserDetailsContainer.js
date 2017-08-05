@@ -2,13 +2,13 @@ import { connect } from 'react-redux';
 import UserDetails from '../components/UserDetails';
 
 const mapStateToProps = (state) => {
-  if (state.userDetails) {
+  if (state.user.details) {
     return {
-      display_name: state.userDetails.display_name,
-      location: state.userDetails.location,
-      company: state.userDetails.company,
-      bio: state.userDetails.bio,
-      image_src: state.userDetails.image_src,
+      display_name: state.user.details.display_name,
+      location: state.user.details.location,
+      company: state.user.details.company,
+      bio: state.user.details.bio,
+      image_src: state.user.details.avatar_url,
       isLoaded: true,
     };
   }

@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import RepoList from '../components/RepoList';
 
 const mapStateToProps = (state) => {
-  if (state.repos) {
+  if (state.repo.list) {
     return {
-      repos: state.repos,
+      repos: state.repo.list,
       isLoaded: true,
     };
   }

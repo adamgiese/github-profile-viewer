@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import Gist from '../components/Gist';
 
 const mapStateToProps = (state) => {
-  if (state.user && state.gists) {
+  if (state.user.username && state.gist.list) {
     return {
-      user: state.user,
-      gist: state.gist,
+      user: state.user.username,
+      gist: state.gist.list,
       isLoaded: true,
     };
   }

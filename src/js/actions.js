@@ -18,7 +18,7 @@ export function requestUserProfile(user) {
 
 export function requestUserRepos(user) {
   return {
-    type: 'REQUEST_USER_REPOS',
+    type: 'REQUEST_REPOS',
     user,
   };
 }

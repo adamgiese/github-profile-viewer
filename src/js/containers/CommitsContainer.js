@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import Commits from '../components/Commits';
 
 const mapStateToProps = (state) => {
-  if (state.commits) {
+  if (state.commit.list) {
     return {
-      commits: state.commits,
+      commits: state.commit.list,
       isLoaded: true,
     };
   }

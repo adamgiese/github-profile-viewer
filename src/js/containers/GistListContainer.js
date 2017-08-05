@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import GistList from '../components/GistList';
 
 const mapStateToProps = (state) => {
-  if (state.gists) {
+  if (state.gist.list) {
     return {
-      gists: state.gists,
+      gists: state.gist.list,
       isLoaded: true,
     };
   }
