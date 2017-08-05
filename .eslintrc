@@ -12,5 +12,6 @@
     }],
     "max-len": ["error", 150],
     "linebreak-style": "off",
+    "class-methods-use-this": "off",
   }
 }
