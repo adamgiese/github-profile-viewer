@@ -10,10 +10,13 @@ export default class Repo extends React.Component {
   }
 
   render() {
-    const displayTitle = this.props.gist ? Object.keys(this.props.gist.files)[0] : '';
+    const displayTitle = this.props.gist && this.props.gist.files ? Object.keys(this.props.gist.files)[0] : '';
     const files = this.props.gist && this.props.gist.files ? Object.values(this.props.gist.files).map(
       file => (
-        <li className='file'>
+        <li
+          className='file'
+          id={file.filename}
+        >
           <h3 className='file--name'>{file.filename}</h3>
           <p className='file--language'>{file.language}</p>
           <pre className='file--content'><code>{file.content}</code></pre>

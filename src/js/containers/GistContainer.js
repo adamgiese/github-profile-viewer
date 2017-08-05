@@ -5,7 +5,7 @@ const mapStateToProps = (state) => {
   if (state.user.username && state.gist.list) {
     return {
       user: state.user.username,
-      gist: state.gist.list,
+      gist: state.gist.details,
       isLoaded: true,
     };
   }
