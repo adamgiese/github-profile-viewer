@@ -20,16 +20,18 @@ const App = (props) => {
 
   return (
     <div className='app'>
-      <header>
+      <header className='header'>
         <h1>Github Profile Viewer</h1>
       </header>
-      <main>
-        <UserDetailsContainer />
-        <div className='routes'>
+      <main className='main'>
+        <aside className='main--sidebar'>
+          <UserDetailsContainer />
+        </aside>
+        <section className='main--content'>
           <Route exact path="/" component={UserProfile} onEnter={onUserProfileEnter('adamgiese')}/>
           <Route exact path="/:repo/commits" component={RepoContainer} />
           <Route exact path="/gist/:gist" component={GistContainer} />
-        </div>
+        </section>
       </main>
     </div>
   );
