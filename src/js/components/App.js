@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import UserProfile from './UserProfile';
 import RepoContainer from '../containers/RepoContainer';
 import GistContainer from '../containers/GistContainer';
