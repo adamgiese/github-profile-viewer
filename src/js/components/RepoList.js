@@ -3,12 +3,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 /* eslint-ensable no-unused-vars */
 
-const UserDetails = (props) => {
+const RepoList = (props) => {
   if (props.isLoaded) {
     const repos = props.repos.map(
       repo => (
         <li
-          className='repo'
+          className='repo--card'
           key={repo.id}
         >
           <h2><Link to={`${repo.name}/commits`}>{repo.name}</Link></h2>
@@ -34,4 +34,4 @@ const UserDetails = (props) => {
   return (<h3>Loading...</h3>);
 };
 
-export default UserDetails;
+export default RepoList;

@@ -1,0 +1,17 @@
+.commits {
+  list-style: none;
+}
+
+.commit {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 2rem;
+
+  &--sha {
+    font-family: $monospace;
+  }
+
+  &--message {
+    font-weight: 700;
+  }
+}
