@@ -1,0 +1,13 @@
+.files {
+  max-width: $content-max;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.file {
+  &--content {
+    background: $black;
+    color: $blue;
+    padding: 2em;
+  }
+}
