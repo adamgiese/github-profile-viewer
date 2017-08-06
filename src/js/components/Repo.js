@@ -3,7 +3,7 @@ import React from 'react';
 import CommitsContainer from '../containers/CommitsContainer';
 import RepoDetails from './RepoDetails';
 import store from '../store';
-import { fetchCommits, fetchUserDetails } from '../actions';
+import { fetchCommits, fetchUserDetails, fetchUserRepos } from '../actions';
 /* eslint-ensable no-unused-vars */
 
 export default class Repo extends React.Component {
@@ -13,6 +13,9 @@ export default class Repo extends React.Component {
 
       if (!this.props.user.details) {
         store.dispatch(fetchUserDetails(this.props.user.username));
+      }
+      if (!this.props.repos) {
+        store.dispatch(fetchUserRepos(this.props.user.username));
       }
     }
   }
