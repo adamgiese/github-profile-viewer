@@ -8,7 +8,7 @@ import { fetchCommits, fetchUserDetails } from '../actions';
 
 export default class Repo extends React.Component {
   componentDidMount() {
-    if (this.props.user && !this.props.user.details) {
+    if (this.props.user) {
       store.dispatch(fetchCommits(this.props.user.username, this.props.match.params.repo));
 
       if (!this.props.user.details) {
