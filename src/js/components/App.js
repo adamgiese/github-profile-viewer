@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Route } from 'react-router-dom';
-import UserProfile from './UserProfile';
+import UserProfileContainer from '../containers/UserProfileContainer';
 import RepoContainer from '../containers/RepoContainer';
 import GistContainer from '../containers/GistContainer';
-import { selectUser, fetchUserDetails, fetchUserRepos, fetchUserGists } from '../actions';
 import store from '../store';
 import UserDetailsContainer from '../containers/UserDetailsContainer';
 
@@ -12,10 +11,6 @@ import UserDetailsContainer from '../containers/UserDetailsContainer';
 
 const App = (props) => {
   const onUserProfileEnter = (user) => {
-    store.dispatch(selectUser(user));
-    store.dispatch(fetchUserDetails(user));
-    store.dispatch(fetchUserRepos(user));
-    store.dispatch(fetchUserGists(user));
   };
 
   return (
@@ -28,7 +23,7 @@ const App = (props) => {
           <UserDetailsContainer />
         </aside>
         <section className='main--content'>
-          <Route exact path="/" component={UserProfile} onEnter={onUserProfileEnter('adamgiese')}/>
+          <Route exact path="/" component={UserProfileContainer} />
           <Route exact path="/:repo/commits" component={RepoContainer} />
           <Route exact path="/gist/:gist" component={GistContainer} />
         </section>

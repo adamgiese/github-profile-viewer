@@ -9,6 +9,11 @@ const enhancer = reduxDevTools ? compose(applyMiddleware(thunkMiddleware), redux
 
 const store = createStore(
   reducer,
+  {
+    user: {
+      username: 'adamgiese',
+    },
+  },
   enhancer,
 );
 
