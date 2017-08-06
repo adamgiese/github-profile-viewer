@@ -8,10 +8,9 @@ import { selectUser, fetchUserDetails, fetchUserRepos, fetchUserGists } from '..
 
 export default class UserProfile extends React.Component {
   componentDidMount() {
-    store.dispatch(selectUser(this.props.username));
-    store.dispatch(fetchUserDetails(this.props.username));
-    store.dispatch(fetchUserRepos(this.props.username));
-    store.dispatch(fetchUserGists(this.props.username));
+    store.dispatch(fetchUserDetails(this.props.user.username));
+    store.dispatch(fetchUserRepos(this.props.user.username));
+    store.dispatch(fetchUserGists(this.props.user.username));
   }
   render() {
     return (

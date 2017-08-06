@@ -2,13 +2,6 @@
 import fetch from 'isomorphic-fetch';
 /* eslint-ensable no-unused-vars */
 
-export function selectUser(user) {
-  return {
-    type: 'SELECT_USER',
-    user,
-  };
-}
-
 export function requestUserProfile(user) {
   return {
     type: 'REQUEST_USER_PROFILE',
