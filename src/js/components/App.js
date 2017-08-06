@@ -15,9 +15,6 @@ const App = (props) => {
 
   return (
     <div className='app'>
-      <header className='header'>
-        <h1>Github Profile Viewer</h1>
-      </header>
       <main className='main'>
         <aside className='main--sidebar'>
           <UserDetailsContainer />
