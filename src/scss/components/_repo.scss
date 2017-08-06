@@ -1,3 +1,19 @@
+.repos {
+  &--title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+  }
+
+  &--list {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+}
+
 .repo-card {
   width: 280px;
   flex: 0 auto;
@@ -57,12 +73,4 @@
       color: $blue;
     }
   }
-}
-
-.repos-list {
-  list-style: none;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  padding: 0 1rem;
 }

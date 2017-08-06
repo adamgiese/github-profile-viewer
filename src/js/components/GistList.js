@@ -11,22 +11,24 @@ const GistList = (props) => {
 
         return (
           <li
-            className='gist--card'
+            className='gist-card'
             key={gist.id}
           >
-            <h2>{displayTitle}</h2>
-            <p>{gist.language}</p>
-            { gist.description ? <hr /> : '' }
-            { gist.description ? <p className='gist-description'>{gist.description}</p> : '' }
-            <Link to={`gist/${gist.id}`}>View Gist &raquo;</Link>
+            <h2 className='gist-card--title'>{displayTitle}</h2>
+            <p className='gist-card--language'>{gist.language}</p>
+            { gist.description ? <p className='gist-card--description'>{gist.description}</p> : '' }
+            <Link className='gist-card--link' to={`gist/${gist.id}`}>View Gist &raquo;</Link>
           </li>
         );
       }
     );
     return (
-      <ul className='gists'>
-        {gists}
-      </ul>
+      <div className='gists'>
+        <h2 className='gists--title'>Gists</h2>
+        <ul className='gists--list'>
+          {gists}
+        </ul>
+      </div>
     );
   }
   return (<h3>Loading...</h3>);

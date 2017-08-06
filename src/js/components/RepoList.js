@@ -28,9 +28,12 @@ const RepoList = (props) => {
       )
     );
     return (
-      <ul className='repos-list'>
-        {repos}
-      </ul>
+      <div className='repos'>
+        <h2 className='repos--title'>Repositories</h2>
+        <ul className='repos--list'>
+          {repos}
+        </ul>
+      </div>
     );
   }
   return (<h3>Loading...</h3>);
