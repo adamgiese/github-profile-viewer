@@ -1,15 +1,68 @@
-.repo--card {
+.repo-card {
   width: 280px;
   flex: 0 auto;
   background: $white;
-  margin: .5rem;
+  margin: 0 .5rem 1rem;
   padding: 1rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  &--title {
+    font-size: 1.2rem;
+
+    a {
+      color: $blue;
+    }
+  }
+
+  &--language {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .75rem;
+    margin-bottom: 1rem;
+  }
+
+  &--rule {
+    margin-bottom: .5rem;
+  }
+
+  &--description {
+    margin-bottom: .5rem;
+    font-weight: 700;
+    font-size: .9rem;
+  }
+
+  &--counts {
+    list-style: none;
+    display: flex;
+    font-size: .75rem;
+    margin-bottom: 1rem;
+  }
+
+  &--count {
+    flex: 0 50%;
+
+    &:nth-child(even) {
+      text-align: right;
+    }
+  }
+
+  &--links {
+    margin-top: auto;
+    list-style: none;
+  }
+
+  &--link {
+    a {
+      color: $blue;
+    }
+  }
 }
 
 .repos-list {
   list-style: none;
   display: flex;
   flex-flow: row wrap;
-  padding: 1rem;
+  justify-content: center;
+  padding: 0 1rem;
 }
