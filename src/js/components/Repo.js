@@ -3,19 +3,20 @@ import React from 'react';
 import CommitsContainer from '../containers/CommitsContainer';
 import RepoDetails from './RepoDetails';
 import store from '../store';
-import { fetchCommits } from '../actions';
+import { fetchCommits, fetchUserDetails } from '../actions';
 /* eslint-ensable no-unused-vars */
 
 export default class Repo extends React.Component {
   componentDidMount() {
-    if (this.props.user) {
-      store.dispatch(fetchCommits(this.props.user, this.props.match.params.repo));
+    if (this.props.user && !this.props.user.details) {
+      store.dispatch(fetchCommits(this.props.user.username, this.props.match.params.repo));
+      store.dispatch(fetchUserDetails(this.props.user.username));
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.user && nextProps.user !== this.props.user) {
-      store.dispatch(fetchCommits(nextProps.user, this.props.match.params.repo));
+    if (nextProps.user.username && nextProps.user.username !== this.props.user.username) {
+      store.dispatch(fetchCommits(nextProps.user.username, this.props.match.params.repo));
     }
   }
 

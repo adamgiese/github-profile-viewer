@@ -1,12 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import store from '../store';
-import { fetchGist } from '../actions';
+import { fetchGist, fetchUserDetails } from '../actions';
 /* eslint-ensable no-unused-vars */
 
 export default class Repo extends React.Component {
   componentDidMount() {
     store.dispatch(fetchGist(this.props.match.params.gist));
+    if (this.props.user && !this.props.user.details) {
+      store.dispatch(fetchUserDetails(this.props.user.username));
+    }
   }
 
   render() {
@@ -15,7 +19,7 @@ export default class Repo extends React.Component {
       file => (
         <li
           className='file'
-          id={file.filename}
+          key={file.filename}
         >
           <h3 className='file--name'>{file.filename}</h3>
           <p className='file--language'>{file.language}</p>
@@ -25,6 +29,7 @@ export default class Repo extends React.Component {
     ) : '';
     return (
       <div className='repo'>
+        <Link className='back-link' to='/'>&laquo; Back</Link>
         <h2>{ displayTitle }</h2>
         <ul className='files'>{files}</ul>
       </div>
