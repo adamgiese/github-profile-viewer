@@ -10,7 +10,10 @@ export default class Repo extends React.Component {
   componentDidMount() {
     if (this.props.user && !this.props.user.details) {
       store.dispatch(fetchCommits(this.props.user.username, this.props.match.params.repo));
-      store.dispatch(fetchUserDetails(this.props.user.username));
+
+      if (!this.props.user.details) {
+        store.dispatch(fetchUserDetails(this.props.user.username));
+      }
     }
   }
 

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import UserProfile from '../components/UserProfile';
 
 const mapStateToProps = state => ({
-  username: state.user.username,
+  user: state.user,
 });
 
 const UserProfileContainer = connect(
