@@ -14,6 +14,35 @@
   }
 }
 
+.repo-details {
+  background: $white;
+  max-width: $content-max;
+  margin: 0 auto 1rem;
+  padding: 1rem;
+
+  &--title {
+    font-family: $monospace;
+    font-size: 2.4rem;
+  }
+
+  &--language {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .75rem;
+    margin-bottom: 1rem;
+  }
+
+  &--description {
+    margin-bottom: .5rem;
+    font-weight: 700;
+    font-size: .9rem;
+  }
+
+  &--link {
+    color: $blue;
+  }
+}
+
 .repo-card {
   width: 280px;
   flex: 0 auto;
