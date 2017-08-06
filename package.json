@@ -7,7 +7,7 @@
   "author": "Adam Giese <adam.giese@gmail.com>",
   "license": "",
   "scripts": {
-    "start": "webpack-dev-server --port 3000 --history-api-fallback true"
+    "start": "webpack-dev-server --port 3000 --history-api-fallback true --hot"
   },
   "dependencies": {
     "babel-core": "^6.25.0",
