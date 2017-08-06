@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Link } from 'react-router-dom';
 /* eslint-ensable no-unused-vars */
 
 const Commits = (props) => {
@@ -18,7 +17,6 @@ const Commits = (props) => {
   ) : '';
   return (
     <div className='commits'>
-      <Link className='back-link' to='/'>&laquo; Back</Link>
       <h2 className='commits--title'>Commits</h2>
       <ul className='commits--list'>
         {commits}
