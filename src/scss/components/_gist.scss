@@ -1,0 +1,20 @@
+.gist {
+  &-card {
+    background: $white;
+    max-width: 872px;
+    margin: 0 auto 1rem;
+    padding: 1rem;
+
+    &--description {
+      margin-bottom: 1rem;
+    }
+
+    &--link {
+      color: $blue
+    }
+  }
+}
+
+.gists-list {
+  list-style: none;
+}

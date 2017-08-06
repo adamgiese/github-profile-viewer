@@ -3,8 +3,9 @@
 
 @import "base/base";
 
-@import "components/user";
-@import "components/repo";
 @import "components/commit";
+@import "components/gist";
+@import "components/repo";
+@import "components/user";
 
 @import "layout/main";
