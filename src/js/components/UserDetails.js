@@ -4,15 +4,17 @@ import React from 'react';
 
 const UserDetails = (props) => {
   if (props.isLoaded) {
-    const company = props.company ? <p className='user-company'>{props.company}</p> : '';
-    const bio = props.bio ? <p className='user-bio'>{props.bio}</p> : '';
+    const company = props.details.company ? <p className='user-details--company'>{props.details.company}</p> : '';
+    const bio = props.details.bio ? <p className='user-details--bio'>{props.details.bio}</p> : '';
     return (
       <div className='user-details'>
-        <img src={props.image_src} />
-        <p className='user-name'>{props.display_name}</p>
-        <p className='user-location'>{props.location}</p>
-        {company}
-        {bio}
+        <img src={props.details.avatar_url} />
+        <div className='user-details--content'>
+          <p className='user-details--name'>{props.details.name}</p>
+          <p className='user-details--location'>{props.details.location}</p>
+          {company}
+          {bio}
+        </div>
       </div>
     );
   }
