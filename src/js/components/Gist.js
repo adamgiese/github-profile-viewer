@@ -5,7 +5,7 @@ import store from '../store';
 import { fetchGist, fetchUserDetails } from '../actions';
 /* eslint-ensable no-unused-vars */
 
-export default class Repo extends React.Component {
+export default class Gist extends React.Component {
   componentDidMount() {
     store.dispatch(fetchGist(this.props.match.params.gist));
     if (this.props.user && !this.props.user.details) {
@@ -28,9 +28,11 @@ export default class Repo extends React.Component {
       )
     ) : '';
     return (
-      <div className='repo'>
-        <Link className='back-link' to='/'>&laquo; Back</Link>
-        <h2>{ displayTitle }</h2>
+      <div className='gist'>
+        <div className='gist-details'>
+          <Link className='back-link' to='/'>&laquo; Back</Link>
+          <h2 className='gist--title'>{ displayTitle }</h2>
+        </div>
         <ul className='files'>{files}</ul>
       </div>
     );
