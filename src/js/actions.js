@@ -11,7 +11,7 @@ export function receiveUser(user, userDetails) {
   };
 }
 
-export function receiveRepos(user, repos) {
+export function receiveRepos(repos) {
   return {
     type: 'RECEIVE_REPOS',
     repos,
@@ -68,7 +68,7 @@ export function fetchUserRepos(user) {
       /* eslint-enable no-console */
     )
     .then(
-      response => dispatch(receiveRepos(user, response))
+      response => dispatch(receiveRepos(response))
     );
 }
 
