@@ -7,7 +7,9 @@
   "author": "Adam Giese <adam.giese@gmail.com>",
   "license": "",
   "scripts": {
-    "start": "webpack-dev-server --port 3000 --history-api-fallback true --hot"
+    "start": "webpack-dev-server --port 3000 --history-api-fallback true --hot",
+    "test": "jest",
+    "test:watch": "yarn test -- --watch"
   },
   "dependencies": {
     "babel-core": "^6.25.0",
@@ -41,5 +43,11 @@
     "webfontloader": "^1.6.28",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.4.5"
+  },
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "jest": "^20.0.4",
+    "nock": "^9.0.14",
+    "redux-mock-store": "^1.2.3"
   }
 }
