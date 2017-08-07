@@ -1,20 +1,44 @@
 .user {
   &-details {
     background: $white;
-    max-width: calc(200px + 4rem);
-    padding: 2rem;
+    margin-bottom: 2rem;
     text-align: center;
-    position: sticky;
-    top: 0;
-  }
 
-  &-name {
-    font-size: 1.4rem;
-  }
+    @include media-min($sm) {
+      display: flex;
+      align-items: center;
+    }
+    @include media-min($md) {
+      display: block;
+      padding: 2rem;
+      max-width: calc(200px + 4rem);
+      position: sticky;
+      top: 0;
+    }
 
-  &-bio {
-    border-top: 2px solid currentColor;
-    margin-top: 1rem;
-    padding-top: 1rem;
+    &--image {
+    }
+
+    &--content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+
+      @include media-min($md) {
+        display: block;
+      }
+    }
+
+    &--name {
+      font-size: 1.4rem;
+    }
+
+    &--bio {
+      border-top: 2px solid currentColor;
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
   }
 }

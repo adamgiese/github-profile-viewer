@@ -18,6 +18,10 @@
 
   &--sha {
     font-family: $monospace;
+    font-size: .75rem;
+    @include media-min($sm) {
+      font-size: 1rem;
+    }
   }
 
   &--message {
