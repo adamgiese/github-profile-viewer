@@ -14,13 +14,17 @@ const Commits = (props) => {
         <p className='commit--author'>{commit.commit.author.name}</p>
       </li>
     )
-  ) : '';
+  ) : false;
+
+  console.log(commits);
+  const commitList =
+    commits.length === 0 || !commits ?
+      <p className='commits--error'>No commits in the past month.</p> :
+      <ul className='commits--list'>{commits}</ul>;
   return (
     <div className='commits'>
       <h2 className='commits--title'>Commits</h2>
-      <ul className='commits--list'>
-        {commits}
-      </ul>
+      {commitList}
     </div>
   );
 };
