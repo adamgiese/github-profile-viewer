@@ -8,7 +8,7 @@ const UserDetails = (props) => {
     const bio = props.details.bio ? <p className='user-details--bio'>{props.details.bio}</p> : '';
     return (
       <div className='user-details'>
-        <img src={props.details.avatar_url} />
+        <img className='user-details--image' src={props.details.avatar_url} />
         <div className='user-details--content'>
           <p className='user-details--name'>{props.details.name}</p>
           <p className='user-details--location'>{props.details.location}</p>
